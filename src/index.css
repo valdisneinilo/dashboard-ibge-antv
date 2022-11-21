@@ -1,1 +1,17 @@
 @import "~antd/dist/antd.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 30px 0;
+  color: #444;
+}

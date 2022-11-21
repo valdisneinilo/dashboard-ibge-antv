@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Column } from "@ant-design/charts";
 import { Props } from "./types";
+import { Container } from "./styles";
 
-const DemoColumn: React.FC<Props> = ({ data, titulo }) => {
+const DemoColumn: React.FC<Props> = ({ data }) => {
   const config = {
     data,
     xField: "ano",
@@ -17,9 +18,7 @@ const DemoColumn: React.FC<Props> = ({ data, titulo }) => {
   };
 
   return (
-    <div>
-      <h1>{titulo.split("-")[0]}</h1>
-      <h2>{titulo.split("-")[1]}</h2>
+    <Container>
       <Column
         {...config}
         onReady={(plot) => {
@@ -31,7 +30,7 @@ const DemoColumn: React.FC<Props> = ({ data, titulo }) => {
           });
         }}
       />
-    </div>
+    </Container>
   );
 };
 
