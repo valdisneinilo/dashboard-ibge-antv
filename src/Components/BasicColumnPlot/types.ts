@@ -1,6 +1,4 @@
-export interface IData {
-  ano: string;
-  valor: number;
+export interface Props {
+  data: any;
+  titulo: string;
 }
-
-export type IDados = { [key: number]: string };
