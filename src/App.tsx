@@ -1,14 +1,20 @@
-import { Button, Form, Select, Space, notification } from "antd";
 import { useEffect, useState } from "react";
-import { SearchOutlined } from "@ant-design/icons";
+import { Button, Form, Select, Space, notification } from "antd";
+import {
+  SearchOutlined,
+  AreaChartOutlined,
+  PieChartOutlined,
+  BarChartOutlined,
+  LineChartOutlined,
+} from "@ant-design/icons";
+import { Container, Titulo, ContainerSeletor, Seletor } from "./style";
+import { IDados, IData } from "./types";
 import BasicColumnPlot from "./Components/BasicColumnPlot";
 import SetStyleOfLinePlotPoint from "./Components/SetStyleOfLinePlotPoint";
 import BasicBarPlot from "./Components/BasicBarPlot";
 import PiePlotSpiderLabel from "./Components/PiePlotSpiderLabel";
 import PiePlotOuterLabel from "./Components/PiePlotOuterLabel";
 import ChartRanger from "./Components/ChartRanger";
-import { Container, Titulo, ContainerSeletor, Seletor } from "./style";
-import { IDados, IData } from "./types";
 
 const App: React.FC = () => {
   const [grafico, setGrafico] = useState<React.ReactNode>(1);
@@ -455,7 +461,12 @@ const App: React.FC = () => {
         </Space>
       </Form>
 
-      <Titulo>{titulo}</Titulo>
+      <Titulo>
+        {<AreaChartOutlined />} {<BarChartOutlined />} {"  "}
+        {titulo}
+        {"  "}
+        {<PieChartOutlined />} {<LineChartOutlined />}
+      </Titulo>
 
       {grafico === 1 && <BasicColumnPlot data={data} />}
       {grafico === 2 && <ChartRanger data={data} />}
