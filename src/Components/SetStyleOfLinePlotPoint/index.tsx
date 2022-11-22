@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import { Line } from "@ant-design/plots";
 import { Props } from "./types";
 
@@ -36,11 +35,7 @@ const SetStyleOfLinePlotPoint: React.FC<Props> = ({ data }) => {
       },
     ],
   };
-  return (
-    <div>
-      <Line {...config} />
-    </div>
-  );
+  return <Line {...config} />;
 };
 
 export default SetStyleOfLinePlotPoint;

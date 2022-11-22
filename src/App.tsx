@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { Button, Form, Select, Space, notification } from "antd";
 import { useEffect, useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
@@ -15,6 +16,7 @@ export interface IData {
 export type IDados = { [key: number]: string };
 
 const App: React.FC = () => {
+  const [grafico, setGrafico] = useState<React.ReactNode>(1);
   const [pais, setPais] = useState<string>("BR");
   const [assunto, setAssunto] = useState<string>("economia");
   const [indicador, setIndicador] = useState<string>("77827");
@@ -56,7 +58,7 @@ const App: React.FC = () => {
   }, [url]);
 
   return (
-    <div>
+    <Container>
       <Form
         layout="vertical"
         onFinish={onFinish}
@@ -460,17 +462,48 @@ const App: React.FC = () => {
         </Space>
       </Form>
 
-      <h1>{titulo}</h1>
-      <div>
-        <BasicColumnPlot data={data} />
-        <BasicBarPlot data={data} />
-        <SetStyleOfLinePlotPoint data={data} />
-        <PiePlotSpiderLabel data={data} />
-        <PiePlotOuterLabel data={data} />
-        <ChartRanger data={data} />
-      </div>
-    </div>
+      <Titulo>{titulo}</Titulo>
+
+      {grafico === 1 && <BasicColumnPlot data={data} />}
+      {grafico === 2 && <ChartRanger data={data} />}
+      {grafico === 3 && <SetStyleOfLinePlotPoint data={data} />}
+      {grafico === 4 && <BasicBarPlot data={data} />}
+      {grafico === 5 && <PiePlotSpiderLabel data={data} />}
+      {grafico === 6 && <PiePlotOuterLabel data={data} />}
+
+      <ul className="containerGraficos">
+        <li className="basicColumnPlot"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </Container>
   );
 };
 
 export default App;
+
+const Container = styled.div`
+  .containerGraficos {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    li {
+      width: 200px;
+      height: 200px;
+      background: url("basicBarPlot.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+`;
+
+const Titulo = styled.h1`
+  font-size: 1.5rem;
+  margin: 30px 0;
+  color: #444;
+`;

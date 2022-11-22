@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import { Column } from "@ant-design/plots";
 import { Props } from "./types";
 
@@ -22,12 +21,12 @@ const ChartRanger: React.FC<Props> = ({ data }) => {
   return (
     <Column
       {...config}
-      onReady={(plot) => {
-        plot.on("plot:click", (evt: any) => {
-          const { x, y } = evt;
-          const tooltipData = plot.chart.getTooltipItems({ x, y });
-        });
-      }}
+      // onReady={(plot) => {
+      //   plot.on("plot:click", (evt: any) => {
+      //     const { x, y } = evt;
+      //     const tooltipData = plot.chart.getTooltipItems({ x, y });
+      //   });
+      // }}
     />
   );
 };

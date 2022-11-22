@@ -9,11 +9,7 @@ const BasicBarPlot: React.FC<Props> = ({ data }) => {
     yField: "ano",
     barWidthRatio: 0.8,
   };
-  return (
-    <div>
-      <Bar {...config} />
-    </div>
-  );
+  return <Bar {...config} />;
 };
 
 export default BasicBarPlot;
