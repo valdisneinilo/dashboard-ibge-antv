@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Button, Form, Select, Space, notification } from "antd";
 import { useEffect, useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
@@ -8,12 +7,8 @@ import BasicBarPlot from "./Components/BasicBarPlot";
 import PiePlotSpiderLabel from "./Components/PiePlotSpiderLabel";
 import PiePlotOuterLabel from "./Components/PiePlotOuterLabel";
 import ChartRanger from "./Components/ChartRanger";
-
-export interface IData {
-  ano: string;
-  valor: number;
-}
-export type IDados = { [key: number]: string };
+import { Container, Titulo, ContainerSeletor, Seletor } from "./style";
+import { IDados, IData } from "./types";
 
 const App: React.FC = () => {
   const [grafico, setGrafico] = useState<React.ReactNode>(1);
@@ -471,39 +466,19 @@ const App: React.FC = () => {
       {grafico === 5 && <PiePlotSpiderLabel data={data} />}
       {grafico === 6 && <PiePlotOuterLabel data={data} />}
 
-      <ul className="containerGraficos">
-        <li className="basicColumnPlot"></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      <ContainerSeletor className="containerGraficos">
+        <Seletor property="basicColumnPlot.jpg" onClick={() => setGrafico(1)} />
+        <Seletor property="chartRanger.gif" onClick={() => setGrafico(2)} />
+        <Seletor property="basicBarPlot.png" onClick={() => setGrafico(4)} />
+        <Seletor property="pieSpider.gif" onClick={() => setGrafico(5)} />
+        <Seletor property="pierPlot.png" onClick={() => setGrafico(6)} />
+        <Seletor
+          property="setStyleOfLinePlotPoint.gif"
+          onClick={() => setGrafico(3)}
+        />
+      </ContainerSeletor>
     </Container>
   );
 };
 
 export default App;
-
-const Container = styled.div`
-  .containerGraficos {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-
-    li {
-      width: 200px;
-      height: 200px;
-      background: url("basicBarPlot.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-  }
-`;
-
-const Titulo = styled.h1`
-  font-size: 1.5rem;
-  margin: 30px 0;
-  color: #444;
-`;
