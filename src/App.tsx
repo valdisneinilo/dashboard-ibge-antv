@@ -1,13 +1,14 @@
-import BasicColumnPlot from "./Components/BasicColumnPlot";
 import { Button, Form, Select, Space, notification } from "antd";
 import { useEffect, useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
+import BasicColumnPlot from "./Components/BasicColumnPlot";
+import SetStyleOfLinePlotPoint from "./Components/SetStyleOfLinePlotPoint";
+import BasicBarPlot from "./Components/BasicBarPlot";
 
 export interface IData {
   ano: string;
   valor: number;
 }
-
 export type IDados = { [key: number]: string };
 
 const App: React.FC = () => {
@@ -458,7 +459,8 @@ const App: React.FC = () => {
 
       <h1>{titulo}</h1>
       <div>
-        <BasicColumnPlot data={data} />
+        {/* <BasicColumnPlot data={data} /> */}
+        <BasicBarPlot data={data} />
       </div>
     </div>
   );

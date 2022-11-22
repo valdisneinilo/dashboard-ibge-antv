@@ -20,7 +20,7 @@ module.exports = {
   plugins: ["prettier", "react", "import", "jsx-a11y"],
   rules: {
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         singleQuote: false,
         semi: true,
