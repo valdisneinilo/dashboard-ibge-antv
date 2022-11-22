@@ -4,6 +4,9 @@ import { SearchOutlined } from "@ant-design/icons";
 import BasicColumnPlot from "./Components/BasicColumnPlot";
 import SetStyleOfLinePlotPoint from "./Components/SetStyleOfLinePlotPoint";
 import BasicBarPlot from "./Components/BasicBarPlot";
+import PiePlotSpiderLabel from "./Components/PiePlotSpiderLabel";
+import PiePlotOuterLabel from "./Components/PiePlotOuterLabel";
+import AssociationFilter from "./Components/AssociationFilter";
 
 export interface IData {
   ano: string;
@@ -59,7 +62,7 @@ const App: React.FC = () => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
-        <Space>
+        <Space style={{ display: "flex", flexWrap: "wrap" }}>
           <Form.Item
             label="País"
             name="pais"
@@ -310,7 +313,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select style={{ width: "400px" }} defaultValue="77827">
+              <Select defaultValue="77827">
                 <Option value="77818">Chegada de turistas</Option>
                 <Option value="77819">Gastos públicos com educação</Option>
                 <Option value="77820">Gastos públicos com saúde</Option>
@@ -341,7 +344,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select style={{ width: "200px" }} defaultValue="77830">
+              <Select defaultValue="77830">
                 <Option value="77830">Esperança de vida ao nascer</Option>
                 <Option value="77831">Índice de desenvolvimento humano</Option>
                 <Option value="77832">
@@ -371,7 +374,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select style={{ width: "200px" }} defaultValue="77838">
+              <Select defaultValue="77838">
                 <Option value="77838">Áreas cultivadas</Option>
                 <Option value="77839">Áreas de pastagens permanentes</Option>
                 <Option value="77840">
@@ -394,7 +397,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select style={{ width: "200px" }} defaultValue="77844">
+              <Select defaultValue="77844">
                 <Option value="77844">Densidade demográfica</Option>
                 <Option value="77845">Homens</Option>
                 <Option value="77846">Mulheres</Option>
@@ -423,7 +426,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select style={{ width: "200px" }} defaultValue="77854">
+              <Select defaultValue="77854">
                 <Option value="77854">Assinaturas de telefonia celular</Option>
                 <Option value="77855">Assinaturas de telefonia fixa</Option>
                 <Option value="77857">Indivíduos com acesso à internet</Option>
@@ -442,7 +445,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select style={{ width: "200px" }} defaultValue="77829">
+              <Select defaultValue="77829">
                 <Option value="77829">Consumo calórico</Option>
                 <Option value="77834">Incidência de subnutrição</Option>
               </Select>
@@ -459,8 +462,12 @@ const App: React.FC = () => {
 
       <h1>{titulo}</h1>
       <div>
-        {/* <BasicColumnPlot data={data} /> */}
+        {/* <BasicColumnPlot data={data} />
         <BasicBarPlot data={data} />
+        <SetStyleOfLinePlotPoint data={data} /> */}
+        <PiePlotSpiderLabel data={data} />
+        {/* <PiePlotOuterLabel data={data} /> */}
+        <AssociationFilter data={data} />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Column } from "@ant-design/plots";
 
-const DemoColumn = () => {
+const ChartRanger = () => {
   const data = [
     {
       type: "Furniture appliances",
@@ -68,4 +68,4 @@ const DemoColumn = () => {
   );
 };
 
-export default DemoColumn;
+export default ChartRanger;

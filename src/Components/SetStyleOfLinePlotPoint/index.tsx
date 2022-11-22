@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Line } from "@ant-design/plots";
 import { Props } from "./types";
 
-const DemoLine: React.FC<Props> = ({ data }) => {
+const SetStyleOfLinePlotPoint: React.FC<Props> = ({ data }) => {
   const config = {
     data,
     xField: "ano",
@@ -43,4 +43,4 @@ const DemoLine: React.FC<Props> = ({ data }) => {
   );
 };
 
-export default DemoLine;
+export default SetStyleOfLinePlotPoint;

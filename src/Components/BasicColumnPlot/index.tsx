@@ -3,7 +3,7 @@ import { Column } from "@ant-design/charts";
 import { Props } from "./types";
 import { Container } from "./styles";
 
-const DemoColumn: React.FC<Props> = ({ data }) => {
+const BasicColumnPlot: React.FC<Props> = ({ data }) => {
   const config = {
     data,
     xField: "ano",
@@ -34,4 +34,4 @@ const DemoColumn: React.FC<Props> = ({ data }) => {
   );
 };
 
-export default DemoColumn;
+export default BasicColumnPlot;

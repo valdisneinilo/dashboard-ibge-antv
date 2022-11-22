@@ -2,7 +2,7 @@ import React from "react";
 import { Bar } from "@ant-design/plots";
 import { Props } from "./types";
 
-const DemoBar: React.FC<Props> = ({ data }) => {
+const BasicBarPlot: React.FC<Props> = ({ data }) => {
   const config = {
     data,
     xField: "valor",
@@ -16,4 +16,4 @@ const DemoBar: React.FC<Props> = ({ data }) => {
   );
 };
 
-export default DemoBar;
+export default BasicBarPlot;
