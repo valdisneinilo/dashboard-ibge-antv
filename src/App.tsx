@@ -25,18 +25,21 @@ const App: React.FC = () => {
     setIndicador(values?.indicador);
   };
   const onFinishFailed = (errorInfo: any) => {
-    notification.info({
-      placement: "bottomRight",
+    notification.error({
+      placement: "topRight",
       message: `Verifique os campos e tente novamente`,
+      style: {
+        background: " #ffdada",
+      },
     });
   };
 
   useEffect(() => {
-    setData([]);
-
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
+        setData([]);
+
         data[0].series[0].serie.forEach((item: IDados) => {
           if (Object.values(item)[0] !== null) {
             setData((dados) => [
@@ -59,7 +62,7 @@ const App: React.FC = () => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
-        <Space style={{ display: "flex", flexWrap: "wrap" }}>
+        <Space className="form">
           <Form.Item
             label="País"
             name="pais"
@@ -68,7 +71,6 @@ const App: React.FC = () => {
             ]}
           >
             <Select
-              defaultValue="BR"
               style={{ width: "200px" }}
               showSearch
               filterOption={(input: any, option: any) => {
@@ -285,11 +287,7 @@ const App: React.FC = () => {
               },
             ]}
           >
-            <Select
-              defaultValue="economia"
-              style={{ width: "200px" }}
-              onChange={(e) => setAssunto(e)}
-            >
+            <Select style={{ width: "200px" }} onChange={(e) => setAssunto(e)}>
               <Option value="economia">Economia</Option>
               <Option value="indicadores-sociais">Indicadores sociais</Option>
               <Option value="meio-ambiente">Meio Ambiente</Option>
@@ -310,7 +308,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select defaultValue="77827">
+              <Select>
                 <Option value="77818">Chegada de turistas</Option>
                 <Option value="77819">Gastos públicos com educação</Option>
                 <Option value="77820">Gastos públicos com saúde</Option>
@@ -341,7 +339,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select defaultValue="77830">
+              <Select>
                 <Option value="77830">Esperança de vida ao nascer</Option>
                 <Option value="77831">Índice de desenvolvimento humano</Option>
                 <Option value="77832">
@@ -371,7 +369,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select defaultValue="77838">
+              <Select>
                 <Option value="77838">Áreas cultivadas</Option>
                 <Option value="77839">Áreas de pastagens permanentes</Option>
                 <Option value="77840">
@@ -394,7 +392,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select defaultValue="77844">
+              <Select>
                 <Option value="77844">Densidade demográfica</Option>
                 <Option value="77845">Homens</Option>
                 <Option value="77846">Mulheres</Option>
@@ -423,7 +421,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select defaultValue="77854">
+              <Select>
                 <Option value="77854">Assinaturas de telefonia celular</Option>
                 <Option value="77855">Assinaturas de telefonia fixa</Option>
                 <Option value="77857">Indivíduos com acesso à internet</Option>
@@ -442,7 +440,7 @@ const App: React.FC = () => {
                 },
               ]}
             >
-              <Select defaultValue="77829">
+              <Select>
                 <Option value="77829">Consumo calórico</Option>
                 <Option value="77834">Incidência de subnutrição</Option>
               </Select>

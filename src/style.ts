@@ -6,12 +6,21 @@ export const Container = styled.div`
     justify-content: center;
     align-items: baseline;
   }
+
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Titulo = styled.h1`
   font-size: 1.5rem;
-  margin: 30px 0;
-  color: #444;
+  margin: 50px 0;
+  color: #fff;
+  background-color: #444;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
 `;
 
 export const ContainerSeletor = styled.div`
@@ -19,6 +28,10 @@ export const ContainerSeletor = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 700px) {
+    background-color: #efefef;
+  }
 `;
 
 export const Seletor = styled.div`
@@ -28,10 +41,16 @@ export const Seletor = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 2rem;
+  margin: 1rem;
+  margin-top: 50px;
   cursor: pointer;
 
   &:hover {
     opacity: 0.5;
+  }
+
+  @media (max-width: 700px) {
+    width: 30px;
+    height: 30px;
   }
 `;
