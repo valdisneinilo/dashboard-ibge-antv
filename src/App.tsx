@@ -6,7 +6,7 @@ import SetStyleOfLinePlotPoint from "./Components/SetStyleOfLinePlotPoint";
 import BasicBarPlot from "./Components/BasicBarPlot";
 import PiePlotSpiderLabel from "./Components/PiePlotSpiderLabel";
 import PiePlotOuterLabel from "./Components/PiePlotOuterLabel";
-import AssociationFilter from "./Components/AssociationFilter";
+import ChartRanger from "./Components/ChartRanger";
 
 export interface IData {
   ano: string;
@@ -462,12 +462,12 @@ const App: React.FC = () => {
 
       <h1>{titulo}</h1>
       <div>
-        {/* <BasicColumnPlot data={data} />
+        <BasicColumnPlot data={data} />
         <BasicBarPlot data={data} />
-        <SetStyleOfLinePlotPoint data={data} /> */}
+        <SetStyleOfLinePlotPoint data={data} />
         <PiePlotSpiderLabel data={data} />
-        {/* <PiePlotOuterLabel data={data} /> */}
-        <AssociationFilter data={data} />
+        <PiePlotOuterLabel data={data} />
+        <ChartRanger data={data} />
       </div>
     </div>
   );

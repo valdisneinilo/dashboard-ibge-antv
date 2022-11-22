@@ -4,11 +4,11 @@ import { Props } from "./types";
 
 const PiePlotOuterLabel: React.FC<Props> = ({ data }) => {
   const config = {
-    appendPadding: 10,
+    appendPadding: 12,
     data,
     angleField: "valor",
     colorField: "ano",
-    radius: 0.8,
+    radius: 1,
     label: {
       type: "outer",
     },
