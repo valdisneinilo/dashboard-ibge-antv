@@ -4,11 +4,11 @@ import { Props } from "./types";
 
 const PiePlotSpiderLabel: React.FC<Props> = ({ data }) => {
   const config = {
-    appendPadding: 12,
+    appendPadding: 8,
     data,
     angleField: "valor",
     colorField: "ano",
-    radius: 1,
+    radius: 0.6,
     label: {
       type: "spider",
       labelHeight: 35,

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  width: 100%;
   .containerGraficos {
     display: flex;
     justify-content: center;
@@ -8,8 +9,7 @@ export const Container = styled.div`
   }
 
   .form {
-    display: flex;
-    flex-wrap: wrap;
+    width: 100%;
   }
 `;
 
