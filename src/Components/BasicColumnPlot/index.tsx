@@ -16,19 +16,7 @@ const BasicColumnPlot: React.FC<Props> = ({ data }) => {
     },
   };
 
-  return (
-    <Column
-      {...config}
-      // onReady={(plot) => {
-      //   plot.on("plot:click", (evt: any) => {
-      //     const { x, y } = evt;
-      //     const { xField } = plot.options;
-      //     const tooltipData = plot.chart.getTooltipItems({ x, y });
-      //     console.log("tooltipData", tooltipData);
-      //   });
-      // }}
-    />
-  );
+  return <Column {...config} />;
 };
 
 export default BasicColumnPlot;

@@ -494,10 +494,15 @@ const App: React.FC = () => {
       </Form>
 
       <Titulo>
-        {<AreaChartOutlined />} {<BarChartOutlined />} {"  "}
+        {<AreaChartOutlined />}
+        {"  "}
+        {<BarChartOutlined />}
+        {"  "}
         {titulo}
         {"  "}
-        {<PieChartOutlined />} {<LineChartOutlined />}
+        {<PieChartOutlined />}
+        {"  "}
+        {<LineChartOutlined />}
       </Titulo>
 
       {grafico === 1 && <BasicColumnPlot data={data} />}
