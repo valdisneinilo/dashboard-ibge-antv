@@ -54,9 +54,8 @@ const App: React.FC = () => {
           });
         })
         .then(() => grafico === 0 && setGrafico(1));
-  }, [grafico, url]);
-
-  console.log("data", data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [url]);
 
   return (
     <Container>
