@@ -5,14 +5,18 @@ import { paises, assuntos, detalhesAssunto } from "./assets";
 import { Props } from "./props";
 
 const FormApp: React.FC<Props> = ({ setIndicador, setPais }) => {
-  const [assunto, setAssunto] = useState<string>("economia");
+  const [assunto, setAssunto] = useState<string>();
   const { Option } = Select;
+  const [form] = Form.useForm();
 
   const onFinish = (values: any) => {
     setPais(values?.pais);
     setIndicador(values?.indicador);
+    setTimeout(() => {
+      form.resetFields();
+    }, 1000);
   };
-  const onFinishFailed = (errorInfo: any) => {
+  const onFinishFailed = () => {
     notification.error({
       placement: "topRight",
       message: `Verifique os campos e tente novamente`,
@@ -23,7 +27,12 @@ const FormApp: React.FC<Props> = ({ setIndicador, setPais }) => {
   };
 
   return (
-    <Form layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed}>
+    <Form
+      layout="vertical"
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+      form={form}
+    >
       <Row gutter={16} style={{ width: "100%" }}>
         <Col xs={16} sm={12} md={6} lg={3}>
           <Form.Item
@@ -45,8 +54,8 @@ const FormApp: React.FC<Props> = ({ setIndicador, setPais }) => {
               }}
             >
               {paises.map((item) => (
-                <Option key={item.sigla} value={item.sigla}>
-                  {item.sigla} - {item.pais}
+                <Option key={item.sigla} value={`${item.sigla} - ${item.pais}`}>
+                  {item.pais}
                 </Option>
               ))}
             </Select>
