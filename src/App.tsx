@@ -3,7 +3,7 @@ import { IData } from "./types";
 import { Container, Titulo, ContainerSeletor, Seletor } from "./style";
 import FormApp from "./Components/Form";
 
-import { Empty } from "antd";
+import { Empty, Tooltip } from "antd";
 import {
   AreaChartOutlined,
   PieChartOutlined,
@@ -80,30 +80,83 @@ const App: React.FC = () => {
       {grafico === 6 && <PiePlotOuterLabel data={data} />}
 
       <ContainerSeletor className="containerGraficos">
-        <Seletor
-          property="basicColumnPlot.jpg"
-          onClick={() => grafico !== 0 && setGrafico(1)}
-        />
-        <Seletor
-          property="chartRanger.gif"
-          onClick={() => grafico !== 0 && setGrafico(2)}
-        />
-        <Seletor
-          property="basicBarPlot.png"
-          onClick={() => grafico !== 0 && setGrafico(4)}
-        />
-        <Seletor
-          property="pieSpider.gif"
-          onClick={() => grafico !== 0 && setGrafico(5)}
-        />
-        <Seletor
-          property="pierPlot.png"
-          onClick={() => grafico !== 0 && setGrafico(6)}
-        />
-        <Seletor
-          property="setStyleOfLinePlotPoint.gif"
-          onClick={() => grafico !== 0 && setGrafico(3)}
-        />
+        <Tooltip
+          title={
+            grafico === 0
+              ? "Primeiro solicite as informações no formulário acima"
+              : "Gráfico de colunas"
+          }
+        >
+          <Seletor
+            property="basicColumnPlot.jpg"
+            onClick={() => grafico !== 0 && setGrafico(1)}
+          />
+        </Tooltip>
+
+        <Tooltip
+          title={
+            grafico === 0
+              ? "Primeiro solicite as informações no formulário acima"
+              : "Gráfico de barras"
+          }
+        >
+          <Seletor
+            property="chartRanger.gif"
+            onClick={() => grafico !== 0 && setGrafico(2)}
+          />
+        </Tooltip>
+
+        <Tooltip
+          title={
+            grafico === 0
+              ? "Primeiro solicite as informações no formulário acima"
+              : "Gráfico de linha"
+          }
+        >
+          <Seletor
+            property="basicBarPlot.png"
+            onClick={() => grafico !== 0 && setGrafico(4)}
+          />
+        </Tooltip>
+
+        <Tooltip
+          title={
+            grafico === 0
+              ? "Primeiro solicite as informações no formulário acima"
+              : "Gráfico de pizza"
+          }
+        >
+          <Seletor
+            property="pieSpider.gif"
+            onClick={() => grafico !== 0 && setGrafico(5)}
+          />
+        </Tooltip>
+
+        <Tooltip
+          title={
+            grafico === 0
+              ? "Primeiro solicite as informações no formulário acima"
+              : "Gráfico de pizza"
+          }
+        >
+          <Seletor
+            property="pierPlot.png"
+            onClick={() => grafico !== 0 && setGrafico(6)}
+          />
+        </Tooltip>
+
+        <Tooltip
+          title={
+            grafico === 0
+              ? "Primeiro solicite as informações no formulário acima"
+              : "Gráfico de linha"
+          }
+        >
+          <Seletor
+            property="setStyleOfLinePlotPoint.gif"
+            onClick={() => grafico !== 0 && setGrafico(3)}
+          />
+        </Tooltip>
       </ContainerSeletor>
     </Container>
   );

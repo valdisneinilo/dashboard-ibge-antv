@@ -3,12 +3,11 @@ import { Column } from "@ant-design/charts";
 import { Props } from "./types";
 
 const BasicColumnPlot: React.FC<Props> = ({ data }) => {
-  const config = {
+  const config: any = {
     data,
     xField: "ano",
     yField: "valor",
     label: {
-      // position: 'middle',
       style: {
         fill: "#FFFFFF",
         opacity: 0.6,
