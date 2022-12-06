@@ -23,7 +23,6 @@ const ChartRanger: React.FC<Props> = ({ data }) => {
         const dataFormated = data[0]?.data;
         const unidade = data[0]?.data?.unidade;
         const classe = data[0]?.data?.unidade?.classe;
-        console.log(data);
         return (
           <ContainerTooltip>
             <h3>{dataFormated?.indicador}</h3>
@@ -52,17 +51,7 @@ const ChartRanger: React.FC<Props> = ({ data }) => {
     },
   };
 
-  return (
-    <Column
-      {...config}
-      // onReady={(plot) => {
-      //   plot.on("plot:click", (evt: any) => {
-      //     const { x, y } = evt;
-      //     const tooltipData = plot.chart.getTooltipItems({ x, y });
-      //   });
-      // }}
-    />
-  );
+  return <Column {...config} />;
 };
 
 export default ChartRanger;
