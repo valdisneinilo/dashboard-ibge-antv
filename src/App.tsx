@@ -34,7 +34,6 @@ const App: React.FC = () => {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           setData([]);
           data[0].series[0].serie.forEach((item: IData) => {
             if (
