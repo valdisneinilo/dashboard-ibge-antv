@@ -11,7 +11,6 @@ const BasicBarPlot: React.FC<Props> = ({ data }) => {
     barWidthRatio: 0.8,
 
     tooltip: {
-      // fields: ["x", "y"],
       customContent: (title: any, data: any) => {
         const dataFormated = data[0]?.data;
         const unidade = data[0]?.data?.unidade;

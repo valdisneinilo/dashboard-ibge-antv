@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Select, Space, Row, Col, notification, Button } from "antd";
+import { Form, Select, Row, Col, notification, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { paises, assuntos, detalhesAssunto } from "./assets";
 import { Props } from "./props";

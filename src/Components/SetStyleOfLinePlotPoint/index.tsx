@@ -35,7 +35,6 @@ const SetStyleOfLinePlotPoint: React.FC<Props> = ({ data }) => {
     ],
     tooltip: {
       showMarkers: false,
-      // fields: ["x", "y"],
       customContent: (title: any, data: any) => {
         const dataFormated = data[0]?.data;
         const unidade = data[0]?.data?.unidade;

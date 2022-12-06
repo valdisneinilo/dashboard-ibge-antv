@@ -34,9 +34,14 @@ const App: React.FC = () => {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
+          console.log(data);
           setData([]);
           data[0].series[0].serie.forEach((item: IData) => {
-            if (Object.values(item)[0] !== null) {
+            if (
+              Object.values(item)[0] !== null &&
+              +Object.keys(item)[0] >= 2000 &&
+              Object.values(item)[0] !== "99999999999998"
+            ) {
               setData((dados) => [
                 ...dados,
                 {

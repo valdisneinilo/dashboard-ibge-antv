@@ -1,5 +1,5 @@
 import React from "react";
-import { Column, Datum } from "@ant-design/charts";
+import { Column } from "@ant-design/charts";
 import { Props } from "./types";
 import { ContainerTooltip } from "./styles";
 
@@ -15,7 +15,6 @@ const BasicColumnPlot: React.FC<Props> = ({ data }) => {
       },
     },
     tooltip: {
-      // fields: ["x", "y"],
       customContent: (title: any, data: any) => {
         const dataFormated = data[0]?.data;
         const unidade = data[0]?.data?.unidade;
